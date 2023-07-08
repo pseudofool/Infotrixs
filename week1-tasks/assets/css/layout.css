@@ -72,15 +72,21 @@ a:hover{
 .signout-btn input:hover{
     background-color: rgb(13, 54, 100);
     color: white;
+    cursor: pointer;
+    transition: .2s;
 }
 
 .signin-btn input:hover{
     background-color: rgb(13, 54, 100);
     color: white;
+    cursor: pointer;
+    transition: .2s;
 }
 .signup-btn input:hover{
     background-color: rgb(13, 54, 100);
     color: white;
+    cursor: pointer;
+    transition: .2s;
 }
 
 
