@@ -29,11 +29,27 @@ const signUp = (req, res) => {
 }
 
 // render sign in page
-const signIn = (req, res) => {
-    res.render('user_sign_in', {
-        title: 'Sign In',
-        user:null
-    });
+const signIn = async (req, res) => {
+    if(req.cookies.user_id){
+        try{
+            const user = await User.findById(req.cookies.user_id);
+            if(user){
+                return res.render('user_profile', {
+                    title: 'User Profile',
+                    user: user
+                });
+            }else{
+                return res.redirect('/users/sign-in');
+            }
+        }catch(err){
+            return res.status(500).json({ error: 'Internal Server Error!' });
+        }
+    }else{
+        res.render('user_sign_in', {
+            title: 'Sign In',
+            user:null
+        });
+    }
 }
 
 // get the data from sign up page
