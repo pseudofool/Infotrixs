@@ -1,0 +1,11 @@
+<h1> <%= title %> </h1>
+<div class="details">
+    <p> Name: <%= user.name %></p>
+    <p> Email: <%= user.email %></p>
+</div>
+
+<div class="signout-btn">
+    <form action="/users/sign-out" method="POST">
+        <input type="submit" value="Sign Out">
+    </form>
+</div>
